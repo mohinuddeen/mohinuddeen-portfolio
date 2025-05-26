@@ -101,14 +101,14 @@ const Hero = () => {
               My Work
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a 
+            {/* <a 
               href="/resume.pdf" 
               download
               className="group border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
             >
               Download CV
               <FiDownload className="group-hover:translate-y-0.5 transition-transform" />
-            </a>
+            </a> */}
           </motion.div>
         </motion.div>
         
