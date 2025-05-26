@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mohinuddeen-portfolio/static/css/main.cf594ead.css",
+    "main.js": "/mohinuddeen-portfolio/static/js/main.0f0a5a66.js",
+    "index.html": "/mohinuddeen-portfolio/index.html",
+    "main.cf594ead.css.map": "/mohinuddeen-portfolio/static/css/main.cf594ead.css.map",
+    "main.0f0a5a66.js.map": "/mohinuddeen-portfolio/static/js/main.0f0a5a66.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf594ead.css",
+    "static/js/main.0f0a5a66.js"
+  ]
+}
