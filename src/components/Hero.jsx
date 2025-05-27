@@ -136,13 +136,13 @@ const Hero = () => {
               Contact Me
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a
+            {/* <a
               href="#projects"
               className="group border-2 border-primary-600 text-primary-600 px-8 py-3 rounded-lg hover:bg-primary-50 hover:shadow-md transition-all flex items-center gap-2 font-medium"
             >
               View Projects
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            </a> */}
           </motion.div>
 
           {/* Enhanced social links */}
