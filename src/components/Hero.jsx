@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiDownload, FiArrowRight } from 'react-icons/fi';
+import { FiDownload, FiArrowRight, FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
@@ -101,14 +101,6 @@ const Hero = () => {
               My Work
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>
-            {/* <a 
-              href="/resume.pdf" 
-              download
-              className="group border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-all flex items-center gap-2"
-            >
-              Download CV
-              <FiDownload className="group-hover:translate-y-0.5 transition-transform" />
-            </a> */}
           </motion.div>
         </motion.div>
         
@@ -119,18 +111,24 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          {['github', 'linkedin', 'twitter', 'dribbble'].map((social) => (
-            <a 
-              key={social}
-              href={`https://${social}.com/yourusername`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary-100 hover:text-primary-600 transition-colors"
-              aria-label={social}
-            >
-              <i className={`fab fa-${social} text-lg`}></i>
-            </a>
-          ))}
+          <a 
+            href="https://github.com/mohinuddeen"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary-100 hover:text-primary-600 transition-colors"
+            aria-label="GitHub"
+          >
+            <FiGithub className="text-lg" />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/mohinuddeen/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary-100 hover:text-primary-600 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <FiLinkedin className="text-lg" />
+          </a>
         </motion.div>
         
         {/* Scroll indicator */}

@@ -107,7 +107,7 @@ const Experience = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-3">
-            Professional <span className="text-blue-500">Experience</span>
+            Professional <span className="text-primary-600">Experience</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             My career journey and key projects I've contributed to
