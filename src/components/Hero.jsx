@@ -175,7 +175,7 @@ const Hero = () => {
       </div>
 
       {/* Enhanced scroll indicator */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -191,7 +191,7 @@ const Hero = () => {
           </div>
           <p className="text-sm text-gray-500 mt-3 font-medium">Scroll down</p>
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
