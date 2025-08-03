@@ -1,63 +1,118 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { FiPhone, FiMail, FiLinkedin, FiGithub, FiMapPin } from 'react-icons/fi';
 
-const Contact = () => {
+const Contact = ({ isDarkMode }) => {
+  // Color definitions
+  const bgColor = isDarkMode ? 'bg-gray-900' : 'bg-white';
+  const cardBg = isDarkMode ? 'bg-gray-800' : 'bg-gray-50';
+  const borderColor = isDarkMode ? 'border-gray-700' : 'border-gray-100';
+  const textColor = isDarkMode ? 'text-white' : 'text-gray-800';
+  const secondaryText = isDarkMode ? 'text-gray-400' : 'text-gray-500';
+  const primaryColor = isDarkMode ? 'text-primary-400' : 'text-primary-600';
+  const iconBg = isDarkMode ? 'bg-gray-700' : 'bg-gray-100';
+
+  const contactItems = [
+    {
+      icon: <FiPhone className="text-xl" />,
+      title: "Phone",
+      value: "+971 568319493",
+      href: "tel:+971568319493"
+    },
+    {
+      icon: <FiMail className="text-xl" />,
+      title: "Email",
+      value: "mohinuddeenriyas@gmail.com",
+      href: "mailto:mohinuddeenriyas@gmail.com"
+    },
+    {
+      icon: <FiLinkedin className="text-xl" />,
+      title: "LinkedIn",
+      value: "linkedin.com/in/mohinuddeen",
+      href: "https://www.linkedin.com/in/mohinuddeen/"
+    },
+    {
+      icon: <FiGithub className="text-xl" />,
+      title: "GitHub",
+      value: "github.com/mohinuddeen",
+      href: "https://github.com/mohinuddeen"
+    }
+    // {
+    //   icon: <FiMapPin className="text-xl" />,
+    //   title: "Location",
+    //   value: "Dubai, UAE",
+    //   href: "https://goo.gl/maps/XYZ" // Replace with your actual Google Maps link
+    // }
+  ];
+
   return (
-    <section id="contact" className="py-16 bg-white">
+    <section id="contact" className={`py-20 ${bgColor} transition-colors duration-300`}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          Get In <span className="text-primary-600">Touch</span>
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className={`text-4xl font-bold ${textColor} mb-4`}>
+            Get In <span className={primaryColor}>Touch</span>
+          </h2>
+          <div className={`w-20 h-1 ${isDarkMode ? 'bg-primary-400' : 'bg-primary-600'} mx-auto mb-6`}></div>
+          <p className={`${secondaryText} max-w-2xl mx-auto text-lg`}>
+            Feel free to reach out for collaborations or just a friendly hello
+          </p>
+        </motion.div>
         
-        <div className="max-w-md mx-auto">
-          <div className="bg-gray-50 p-8 rounded-xl shadow-sm">
-            <h3 className="text-xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-md mx-auto"
+        >
+          <div className={`${cardBg} p-8 rounded-xl shadow-sm border ${borderColor} hover:shadow-md dark:hover:shadow-gray-700/50 transition-all`}>
+            <h3 className={`text-xl font-semibold ${textColor} mb-6`}>Contact Information</h3>
             
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <div className="bg-primary-100 p-3 rounded-full mr-4">
-                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-gray-500 text-sm">Phone</h4>
-                  <a href="tel:+971568319493" className="text-gray-700 hover:text-primary-600">+971 568319493</a>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-primary-100 p-3 rounded-full mr-4">
-                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-gray-500 text-sm">Email</h4>
-                  <a href="mailto:mohinuddeenriyas@gmail.com" className="text-gray-700 hover:text-primary-600">mohinuddeenriyas@gmail.com</a>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-primary-100 p-3 rounded-full mr-4">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-gray-500 text-sm">LinkedIn</h4>
-                  <a 
-                    href="https://www.linkedin.com/in/mohinuddeen/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-primary-600"
-                  >
-                    linkedin.com/in/mohinuddeen
-                  </a>
-                </div>
-              </div>
+            <div className="space-y-5">
+              {contactItems.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start group"
+                >
+                  <div className={`p-3 rounded-full mr-4 ${iconBg} ${primaryColor} transition-colors group-hover:bg-primary-500 group-hover:text-white dark:group-hover:bg-primary-600`}>
+                    {React.cloneElement(item.icon, { className: `text-xl` })}
+                  </div>
+                  <div>
+                    <h4 className={`${secondaryText} text-sm mb-1`}>{item.title}</h4>
+                    <a 
+                      href={item.href} 
+                      target={item.title === 'Email' || item.title === 'Phone' ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
+                      className={`${textColor} hover:${primaryColor} transition-colors flex items-center`}
+                    >
+                      {item.value}
+                      {['LinkedIn', 'GitHub'].includes(item.title) && (
+                        <svg 
+                          className="w-4 h-4 ml-1" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      )}
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
