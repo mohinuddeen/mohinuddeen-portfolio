@@ -1,7 +1,7 @@
 // src/components/Contact.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiPhone, FiMail, FiLinkedin, FiGithub, FiArrowUpRight } from 'react-icons/fi';
+import { FiPhone, FiMail, FiLinkedin, FiGithub, FiArrowUpRight, FiMapPin } from 'react-icons/fi';
 import SectionHeading from './SectionHeading';
 
 const Contact = ({ isDarkMode }) => {
@@ -16,9 +16,23 @@ const Contact = ({ isDarkMode }) => {
   const contactItems = [
     {
       icon: <FiPhone />,
-      title: 'Phone',
-      value: '+971 56 831 9493',
-      href: 'tel:+971568319493',
+      title: 'Phone (UAE)',
+      value: '+971 56 485 0294',
+      href: 'tel:+971564850294',
+      external: false,
+    },
+    {
+      icon: <FiPhone />,
+      title: 'Phone (India)',
+      value: '+91 73538 00310',
+      href: 'tel:+917353800310',
+      external: false,
+    },
+    {
+      icon: <FiMapPin />,
+      title: 'Location',
+      value: 'Dubai, UAE — open to AU, CH, MY, NZ, SG',
+      href: null,
       external: false,
     },
     {
@@ -66,30 +80,53 @@ const Contact = ({ isDarkMode }) => {
             <h3 className={`font-display text-lg font-semibold ${textColor} mb-6`}>Contact information</h3>
 
             <div className="space-y-2">
-              {contactItems.map((item, index) => (
-                <motion.a
-                  key={index}
-                  href={item.href}
-                  target={item.external ? '_blank' : '_self'}
-                  rel={item.external ? 'noopener noreferrer' : undefined}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.08 }}
-                  viewport={{ once: true }}
-                  className={`flex items-center gap-4 p-2.5 -mx-2.5 rounded-xl group transition-colors ${isDarkMode ? 'hover:bg-gray-700/50' : 'hover:bg-gray-50'}`}
-                >
-                  <div className={`p-3 rounded-full ${iconBg} ${primaryColor} group-hover:bg-primary-600 group-hover:text-white transition-colors flex-shrink-0`}>
-                    {React.cloneElement(item.icon, { className: 'text-lg' })}
-                  </div>
-                  <div className="min-w-0">
-                    <h4 className={`${secondaryText} text-xs font-mono uppercase tracking-wide mb-0.5`}>{item.title}</h4>
-                    <p className={`${textColor} truncate flex items-center gap-1`}>
-                      {item.value}
-                      {item.external && <FiArrowUpRight className={`${primaryColor} flex-shrink-0`} size={14} />}
-                    </p>
-                  </div>
-                </motion.a>
-              ))}
+              {contactItems.map((item, index) => {
+                const content = (
+                  <>
+                    <div className={`p-3 rounded-full ${iconBg} ${primaryColor} ${item.href ? 'group-hover:bg-primary-600 group-hover:text-white' : ''} transition-colors flex-shrink-0`}>
+                      {React.cloneElement(item.icon, { className: 'text-lg' })}
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className={`${secondaryText} text-xs font-mono uppercase tracking-wide mb-0.5`}>{item.title}</h4>
+                      <p className={`${textColor} flex items-center gap-1`}>
+                        {item.value}
+                        {item.external && <FiArrowUpRight className={`${primaryColor} flex-shrink-0`} size={14} />}
+                      </p>
+                    </div>
+                  </>
+                );
+
+                const sharedClasses = `flex items-center gap-4 p-2.5 -mx-2.5 rounded-xl group transition-colors ${
+                  item.href ? (isDarkMode ? 'hover:bg-gray-700/50' : 'hover:bg-gray-50') : ''
+                }`;
+
+                return item.href ? (
+                  <motion.a
+                    key={index}
+                    href={item.href}
+                    target={item.external ? '_blank' : '_self'}
+                    rel={item.external ? 'noopener noreferrer' : undefined}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.08 }}
+                    viewport={{ once: true }}
+                    className={sharedClasses}
+                  >
+                    {content}
+                  </motion.a>
+                ) : (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.08 }}
+                    viewport={{ once: true }}
+                    className={sharedClasses}
+                  >
+                    {content}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </motion.div>

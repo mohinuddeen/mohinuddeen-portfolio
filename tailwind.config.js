@@ -5,14 +5,35 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ['"Space Grotesk"', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
       colors: {
         primary: {
-          600: '#4f46e5',
-          400: '#818cf8',
-        }
+          50:  '#EEF2FF',
+          100: '#E0E7FF',
+          400: '#818CF8',
+          500: '#6366F1',
+          600: '#4F46E5',
+          700: '#4338CA',
+        },
+        secondary: {
+          400: '#2DD4BF',
+          500: '#14B8A6',
+          600: '#0D9488',
+        },
       },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+      animation: {
+        float: 'float 6s ease-in-out infinite',
+        'float-delay': 'float 6s ease-in-out 2s infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-16px)' },
+        },
       },
     },
   },

@@ -1,11 +1,16 @@
 // src/components/Hero.jsx
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FiArrowRight, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiArrowRight, FiGithub, FiLinkedin, FiDownload, FiMapPin } from "react-icons/fi";
 
 const Hero = ({ isDarkMode }) => {
   const [typedText, setTypedText] = useState("");
-  const roles = ["Mobile Developer", "Web Developer", "UI/UX Enthusiast", "Problem Solver"];
+  const roles = [
+    "Senior Software Engineer",
+    "Mobile & Full-Stack Developer",
+    "Application Security Enthusiast",
+    "Problem Solver",
+  ];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -77,16 +82,22 @@ const Hero = ({ isDarkMode }) => {
           className="order-2 text-center md:text-left max-w-2xl"
         >
           <motion.div
-            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border font-mono text-xs mb-6 ${badgeBg} ${textColor}`}
+            className="flex flex-wrap justify-center md:justify-start gap-2 mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-500"></span>
-            </span>
-            available for new projects
+            <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border font-mono text-xs ${badgeBg} ${textColor}`}>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-500"></span>
+              </span>
+              open to new roles
+            </div>
+            <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border font-mono text-xs ${badgeBg} ${textColor}`}>
+              <FiMapPin size={12} />
+              Dubai · open to AU, CH, MY, NZ, SG
+            </div>
           </motion.div>
 
           <motion.h1
@@ -114,9 +125,10 @@ const Hero = ({ isDarkMode }) => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            Experienced developer with 7+ years building Android, iOS, and web
-            applications — passionate about efficient, scalable solutions with
-            beautiful interfaces.
+            Senior Software Engineer with 7+ years building secure, scalable
+            mobile and full-stack applications across healthcare, e-commerce,
+            and enterprise domains — with hands-on application security
+            testing experience (OWASP Top 10, Burp Suite).
           </motion.p>
 
           <motion.div
@@ -133,6 +145,19 @@ const Hero = ({ isDarkMode }) => {
             >
               Get in touch
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </a>
+
+            <a
+              href="/resume/Mohinuddeen_Riyas_Resume.pdf"
+              download
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium border transition-all ${
+                isDarkMode
+                  ? "border-gray-700 text-gray-200 hover:bg-gray-800"
+                  : "border-gray-200 text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              <FiDownload />
+              Download CV
             </a>
 
             <div className="flex gap-3">

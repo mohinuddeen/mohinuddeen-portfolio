@@ -31,7 +31,7 @@ const HealthPlatform = ({ isDarkMode }) => {
       active: true,
     },
     {
-      href: '#',
+      href: 'https://github.com/mohinuddeen/health-platform-mobile/releases/tag/v1.0.0',
       icon: <FaAndroid />,
       accent: isDarkMode ? 'text-gray-500' : 'text-gray-400',
       title: 'Android APK',

@@ -17,19 +17,19 @@ const Education = ({ isDarkMode }) => {
 
   const education = [
     {
-      degree: 'Master of Computer Application',
-      institution: 'Manipal Institute of Technology',
-      year: '2018',
+      degree: 'Master of Computer Applications (MCA)',
+      institution: 'Manipal University, Karnataka, India',
+      year: '2016 — 2018',
       icon: <FiAward />,
-      description: 'Specialized in Mobile Application Development and Web Technologies',
+      description: 'Computer Science, with focus on mobile application development and web technologies',
       courses: ['Advanced Mobile Development', 'Cloud Computing', 'Data Structures & Algorithms'],
     },
     {
-      degree: 'Bachelor of Computer Application',
-      institution: 'P A First Grade College',
-      year: '2016',
+      degree: 'Bachelor of Computer Application (BCA)',
+      institution: 'Mangalore University, Karnataka, India',
+      year: '2013 — 2016',
       icon: <FiBook />,
-      description: 'Focus on Software Engineering and Database Management Systems',
+      description: 'Computer Science, with focus on software engineering and database management systems',
       courses: ['Software Engineering', 'Database Systems', 'Web Technologies'],
     },
   ];

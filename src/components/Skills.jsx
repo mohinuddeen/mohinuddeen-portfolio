@@ -1,7 +1,7 @@
 // src/components/Skills.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiSmartphone, FiMonitor, FiServer, FiDatabase } from 'react-icons/fi';
+import { FiSmartphone, FiMonitor, FiServer, FiDatabase, FiShield } from 'react-icons/fi';
 import SectionHeading from './SectionHeading';
 
 const Skills = ({ isDarkMode }) => {
@@ -49,6 +49,16 @@ const Skills = ({ isDarkMode }) => {
         { name: 'Docker', level: 80 },
       ],
     },
+    {
+      title: 'Application Security',
+      icon: <FiShield />,
+      skills: [
+        { name: 'OWASP Top 10', level: 80 },
+        { name: 'Burp Suite', level: 75 },
+        { name: 'Manual Security Testing', level: 75 },
+        { name: 'Secure API Design (JWT, RBAC)', level: 80 },
+      ],
+    },
   ];
 
   const primaryColor = isDarkMode ? 'text-primary-400' : 'text-primary-600';
@@ -71,7 +81,7 @@ const Skills = ({ isDarkMode }) => {
           description="Technologies I work with and my proficiency levels"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-5 max-w-7xl mx-auto">
           {skillsCategories.map((category, index) => (
             <motion.div
               key={index}

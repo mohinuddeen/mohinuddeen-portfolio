@@ -1,7 +1,7 @@
 // src/components/Experience.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiBriefcase, FiCalendar, FiCode, FiLayers, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { FiBriefcase, FiCalendar, FiMapPin, FiCode, FiLayers, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import SectionHeading from './SectionHeading';
 
 const Experience = ({ isDarkMode }) => {
@@ -27,20 +27,21 @@ const Experience = ({ isDarkMode }) => {
 
   const experiences = [
     {
-      company: 'Al Otaiba Communication',
+      company: 'Al Otaiba Communications',
+      location: 'Dubai, UAE',
       role: 'Software Developer',
-      period: 'Dec 2021 — Present',
+      period: 'Nov 2024 — Present',
       icon: <FiBriefcase />,
       roleSummary:
-        'Developed mobile and web applications for e-commerce and healthcare platforms, specializing in React Native and Next.js with CS-Cart integration.',
+        'Architect secure, cross-platform mobile applications using React Native and Flutter for healthcare, e-commerce, and workforce-management platforms — applying OWASP Top 10 principles, manual security testing with Burp Suite, and secure API design (JWT, RBAC, HTTPS) throughout the development lifecycle.',
       projects: [
         {
           name: 'German Supplements',
           summary: 'A B2C application for selling German supplements directly to customers.',
           responsibilities: [
             'Developed both the mobile application and website',
-            'Created UI/UX and implemented front-end features',
-            'Integrated custom CS-Cart add-on APIs for product data and order management',
+            'Integrated custom CS-Cart APIs for authentication, product management, ordering, and customer data',
+            'Implemented secure API communication using JWT authentication, role-based access control, and input validation',
           ],
           technologies: 'React Native (Expo), React, Next.js, CS-Cart Add-on APIs',
         },
@@ -49,38 +50,56 @@ const Experience = ({ isDarkMode }) => {
           summary: 'A B2C application offering healthcare services to customers within Dubai.',
           responsibilities: [
             'Developed both mobile and web platforms',
-            'Designed and implemented application interface and API integration',
-            'Built and managed CS-Cart add-ons for service data and user management',
+            'Built custom CS-Cart add-ons for homepage banners, featured products, categories, and dynamic content',
+            'Performed manual security testing on APIs by analyzing HTTP requests, headers, cookies, and auth flows with Burp Suite',
           ],
           technologies: 'React Native (Expo), React, Next.js, CS-Cart Add-on APIs',
+        },
+        {
+          name: 'HRMS Location Tracking System',
+          summary: 'A Flutter mobile app with a PHP backend and admin dashboard for location-based staff attendance.',
+          responsibilities: [
+            'Built the Flutter mobile app and PHP backend APIs for location-based attendance and staff tracking',
+            'Implemented GPS geofencing, background location monitoring, and audit logging',
+            'Built the HRMS admin dashboard for attendance management and reporting',
+          ],
+          technologies: 'Flutter, PHP, MySQL, Tailwind CSS, GPS Geofencing',
         },
       ],
     },
     {
-      company: 'Copper Leaf Technologies',
-      role: 'Mobile and Web Developer',
+      company: 'Copperleaf Technologies',
+      location: 'Kozhikode, India',
+      role: 'Android Developer',
       period: 'Mar 2021 — Nov 2024',
       icon: <FiCode />,
       roleSummary:
-        'Built enterprise B2B applications with offline capabilities, focusing on inventory management and sales tracking systems.',
+        'Built enterprise Android applications (Java/Kotlin) for B2B platforms — ElleysERP and Capex — supporting workforce management, sales operations, and offline-first data sync for thousands of business users.',
       projects: [
         {
           name: 'Elleys ERP',
           summary: 'A B2B application for managing electric products, workforce, and construction-related projects.',
-          responsibilities: ['Designed UI and developed front-end features', 'Managed local database and offline data handling'],
-          technologies: 'SOAP, SQLite, JSON, Android Studio, Git',
+          responsibilities: [
+            'Implemented MVVM architecture, SQLite offline storage, and performance optimization',
+            'Developed workforce management features: attendance, task tracking, expenses, and reporting',
+          ],
+          technologies: 'Java, Kotlin, MVVM, SQLite, SOAP, Android Studio, Git',
         },
         {
           name: 'Capex',
           summary: 'A B2B application for dealer sales, order tracking, and offline stock management.',
-          responsibilities: ['Developed front-end modules and fixed bugs', 'Managed local data sync and offline access'],
-          technologies: 'SOAP, SQLite, JSON, Android Studio, Google Maps, AsyncTask, Glide',
+          responsibilities: [
+            'Integrated REST/SOAP APIs, push notifications, and background synchronization',
+            'Performed code reviews, debugging, and security improvements following secure development practices',
+          ],
+          technologies: 'SOAP, SQLite, JSON, Android Studio, Google Maps, Glide',
         },
       ],
     },
     {
       company: 'Amitzinfy Pvt. Ltd.',
-      role: 'Android Developer',
+      location: 'Mangalore, India',
+      role: 'Application Developer',
       period: 'Sep 2018 — Feb 2021',
       icon: <FiLayers />,
       roleSummary:
@@ -95,7 +114,7 @@ const Experience = ({ isDarkMode }) => {
         {
           name: 'Fresh on Wheel',
           summary: 'An e-commerce app for wholesale vegetable and fruit purchases by retail shop owners.',
-          responsibilities: ['Designed and developed front-end features', 'Collaborated with backend for seamless user experience'],
+          responsibilities: ['Designed and developed front-end features', 'Built REST API integrations using Retrofit and JSON'],
           technologies: 'Retrofit, JSON, Android Studio',
         },
       ],
@@ -131,6 +150,10 @@ const Experience = ({ isDarkMode }) => {
                   <h3 className={`font-display text-xl font-bold ${textColor}`}>{exp.company}</h3>
                   <div className={`flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 ${secondaryText} text-sm`}>
                     <span className="font-medium">{exp.role}</span>
+                    <span className="flex items-center gap-1.5">
+                      <FiMapPin size={13} />
+                      {exp.location}
+                    </span>
                     <span className="flex items-center gap-1.5">
                       <FiCalendar size={13} />
                       {exp.period}

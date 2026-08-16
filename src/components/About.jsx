@@ -1,7 +1,7 @@
 // src/components/About.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiCode, FiCpu, FiDatabase, FiSmartphone } from 'react-icons/fi';
+import { FiCode, FiCpu, FiDatabase, FiSmartphone, FiShield } from 'react-icons/fi';
 import SectionHeading from './SectionHeading';
 
 const About = ({ isDarkMode }) => {
@@ -18,7 +18,8 @@ const About = ({ isDarkMode }) => {
     { icon: <FiSmartphone />, title: 'Mobile Development', description: 'React Native, Android, iOS, Flutter' },
     { icon: <FiCode />, title: 'Frontend Development', description: 'React, Next.js, Tailwind, TypeScript' },
     { icon: <FiCpu />, title: 'Backend Development', description: 'Node.js, Python, REST/GraphQL APIs' },
-    { icon: <FiDatabase />, title: 'Database Management', description: 'MySQL, MongoDB, PostgreSQL' },
+    { icon: <FiDatabase />, title: 'Database Management', description: 'MySQL, SQLite, PostgreSQL' },
+    { icon: <FiShield />, title: 'Application Security', description: 'OWASP Top 10, Burp Suite, secure API design' },
   ];
 
   return (
@@ -44,14 +45,19 @@ const About = ({ isDarkMode }) => {
             <h3 className={`font-display text-xl font-semibold ${textColor} mb-6`}>Professional journey</h3>
             <div className="space-y-4">
               <p className={`${secondaryText} leading-relaxed`}>
-                I'm an experienced developer with <span className={`font-semibold ${primaryColor}`}>7+ years</span> of
-                expertise building and maintaining Android and iOS applications using{' '}
-                <span className={`font-medium ${textColor}`}>React Native, Kotlin, and Swift</span>.
+                I'm a Senior Software Engineer with{' '}
+                <span className={`font-semibold ${primaryColor}`}>7+ years</span> of experience designing and
+                building scalable mobile, web, and backend solutions across healthcare, e-commerce, ERP, and
+                enterprise domains — using{' '}
+                <span className={`font-medium ${textColor}`}>React Native, Android (Java/Kotlin), Flutter, React,
+                Next.js, Django, and PHP</span>.
               </p>
               <p className={`${secondaryText} leading-relaxed`}>
-                I specialize in modern web applications using{' '}
-                <span className={`font-medium ${textColor}`}>React, Next.js, and Tailwind CSS</span> to build
-                responsive, scalable interfaces that deliver exceptional experiences.
+                Alongside development, I have hands-on experience applying{' '}
+                <span className={`font-medium ${textColor}`}>OWASP Top 10 principles</span>, performing manual
+                security testing with <span className={`font-medium ${textColor}`}>Burp Suite</span>, and analyzing
+                HTTP traffic to identify vulnerabilities such as XSS, SQL injection, IDOR, and access-control
+                issues — knowledge I fold directly into how I design and secure the applications I build.
               </p>
               <p className={`${secondaryText} leading-relaxed`}>
                 My work spans intuitive UI/UX design, complex API integration, database performance, and robust

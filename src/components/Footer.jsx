@@ -13,7 +13,7 @@ const Footer = ({ isDarkMode }) => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <h3 className="font-display text-lg font-semibold">Mohinuddeen Riyas</h3>
-            <p className={`${mutedText} font-mono text-sm mt-0.5`}>Mobile &amp; Web Developer</p>
+            <p className={`${mutedText} font-mono text-sm mt-0.5`}>Senior Software Engineer</p>
           </div>
 
           <div className="flex gap-3">
@@ -34,7 +34,7 @@ const Footer = ({ isDarkMode }) => {
               <FiMail size={16} />
             </a>
             <a
-              href="tel:+971568319493"
+              href="tel:+971564850294"
               className={`w-10 h-10 rounded-full border ${borderColor} flex items-center justify-center ${mutedText} hover:text-white hover:border-gray-600 transition-colors`}
               aria-label="Phone"
             >
