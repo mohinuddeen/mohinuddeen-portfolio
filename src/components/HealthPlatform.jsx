@@ -36,8 +36,8 @@ const HealthPlatform = ({ isDarkMode }) => {
       accent: isDarkMode ? 'text-gray-500' : 'text-gray-400',
       title: 'Android APK',
       description: 'Download the React Native Android application.',
-      cta: 'Coming soon',
-      active: false,
+      cta: 'Download APK through GitHub',
+      active: true,
     },
   ];
 
